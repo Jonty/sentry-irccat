@@ -31,7 +31,7 @@ class IRCCatMessage(Plugin):
 
         link = '%s/%s/group/%d/' % (settings.URL_PREFIX, group.project.slug,
                                     group.id)
-        message = '[sentry %s] %s: %s' % (event.server_name, link, event.message)
+        message = '[sentry %s] %s - %s' % (event.server_name, link, event.message)
 
         self.send_payload(event.project, event.level, message)
 
